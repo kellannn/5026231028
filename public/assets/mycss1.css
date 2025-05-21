@@ -1,0 +1,14 @@
+body {
+    background-color: lightblue;
+    }
+    
+    a:link {
+    color: #0e4286;
+    text-decoration: none;}
+
+    a:hover {
+    color: blueviolet;
+    text-decoration: solid;
+    font-weight: bold;}
+
+   
