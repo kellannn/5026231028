@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Coba;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\PenghapusController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -99,3 +100,11 @@ Route::get('/pegawai/edit/{id}',[PegawaiController::class,'edit']);
 Route::post('/pegawai/update',[PegawaiController::class,'update']);
 Route::get('/pegawai/hapus/{id}',[PegawaiController::class,'hapus']);
 Route::get('/pegawai/cari',[PegawaiDBController::class,'cari']);
+
+Route::get('/penghapus',[PenghapusController::class,'penghapus']);
+Route::get('/penghapus/tambah',[PenghapusController::class,'tambah']);
+Route::post('/penghapus/store',[PenghapusController::class,'store']);
+Route::get('/penghapus/edit/{id}',[PenghapusController::class,'edit']);
+Route::post('/penghapus/update',[PenghapusController::class,'update']);
+Route::get('/penghapus/hapus/{id}',[PenghapusController::class,'hapus']);
+Route::get('/penghapus/cari',[PenghapusController::class,'cari']);
