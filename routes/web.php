@@ -5,6 +5,8 @@ use App\Http\Controllers\Coba;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PenghapusController;
+use App\Http\Controllers\KaryawanController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -108,3 +110,11 @@ Route::get('/penghapus/edit/{id}',[PenghapusController::class,'edit']);
 Route::post('/penghapus/update',[PenghapusController::class,'update']);
 Route::get('/penghapus/hapus/{id}',[PenghapusController::class,'hapus']);
 Route::get('/penghapus/cari',[PenghapusController::class,'cari']);
+
+Route::get('/karyawan',[KaryawanController::class,'karyawan']);
+Route::get('/karyawan/tambah',[KaryawanController::class,'tambah']);
+Route::post('/karyawan/store',[KaryawanController::class,'store']);
+Route::get('/karyawan/edit/{id}',[KaryawanController::class,'edit']);
+Route::post('/karyawan/update',[KaryawanController::class,'update']);
+Route::get('/karyawan/hapus/{id}',[KaryawanController::class,'hapus']);
+Route::get('/karyawan/cari',[KaryawanController::class,'cari']);

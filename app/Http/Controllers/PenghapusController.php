@@ -63,4 +63,6 @@ class PenghapusController extends Controller
 
         return view('penghapus', ['penghapus' => $penghapus]);
     }
+
+    
 }
