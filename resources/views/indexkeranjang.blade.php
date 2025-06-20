@@ -1,32 +1,33 @@
 @extends('template')
+
 @section('content')
-    <h3>Keranjang Belanja</h3>
-    <br />
+    <h3 class="mb-4">Keranjang Belanja</h3>
 
-    <table class="table table-striped table-hover">
-        <tr>
-            <th>Kode Pembelian</th>
-            <th>Kode Barang</th>
-            <th>Jumlah Pembelian</th>
-            <th>Harga per item</th>
-            <th>Total</th>
-            <th>Action</th>
-        </tr>
-
-        @foreach ($keranjangs as $keranjang)
+    <table class="table table-bordered table-hover text-center">
+        <thead class="thead-light">
             <tr>
-                <td>{{ $keranjang->ID }}</td>
-                <td>{{ $keranjang->KodeBarang }}</td>
-                <td>{{ $keranjang->Jumlah }}</td>
-                <td>{{ number_format($keranjang->Harga, 0, ',', '.') }}</td>
-                <td>{{ number_format($keranjang->Jumlah * $keranjang->Harga, 0, ',', '.') }}</td>
-                <td>
-                    <a href="/keranjang/tambah/{{ $keranjang->ID }}" class="btn btn-success">Beli</a>
-                    <a href="/keranjang/hapus/{{ $keranjang->ID }}" class="btn btn-danger">Batal</a>
-                </td>
+                <th>Kode Pembelian</th>
+                <th>Kode Barang</th>
+                <th>Jumlah Pembelian</th>
+                <th>Harga per item</th>
+                <th>Total</th>
+                <th>Action</th>
             </tr>
-        @endforeach
+        </thead>
+        <tbody>
+            @foreach ($keranjangs as $item)
+                <tr>
+                    <td>{{ $item->ID }}</td>
+                    <td>{{ $item->KodeBarang }}</td>
+                    <td>{{ $item->Jumlah }}</td>
+                    <td>{{ number_format($item->Harga, 0, ',', '.') }}</td>
+                    <td>{{ number_format($item->Jumlah * $item->Harga, 0, ',', '.') }}</td>
+                    <td>
+                        <a href="#" class="btn btn-success btn-sm mr-1">Beli</a>
+                        <a href="/keranjang/hapus/{{ $item->ID }}" class="btn btn-danger btn-sm">Batal</a>
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
     </table>
-
-    {{ $keranjangs->links() }}
 @endsection

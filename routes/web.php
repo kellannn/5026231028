@@ -92,6 +92,9 @@ Route::get('/contact', function () {
 Route::get('/formulir', [PegawaiController::class, 'formulir']);
 Route::post('/formulir/proses', [PegawaiController::class, 'proses']);
 
+Route::get('/frontend', function () { return view('frontend');});
+
+
 // route blog   
 Route::get('/blog', [BlogController::class, 'home']);
 Route::get('/blog/tentang',[BlogController::class, 'tentang']);
@@ -128,3 +131,4 @@ Route::get('/keranjang/tambah', [App\Http\Controllers\KeranjangController::class
 Route::get('/keranjang/tambah/{ID}', [App\Http\Controllers\KeranjangController::class, 'storekeranjang']);
 Route::post('/keranjang/update', [App\Http\Controllers\KeranjangController::class, 'updatekeranjang']);
 Route::get('/keranjang/hapus/{ID}', [App\Http\Controllers\KeranjangController::class, 'keranjangbelanja']);
+

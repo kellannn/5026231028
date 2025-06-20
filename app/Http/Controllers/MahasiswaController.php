@@ -13,7 +13,7 @@ class KeranjangController extends Controller
             $keranjangs = DB::table('keranjangbelanja')-> get();
 
 			// mengirim data keranjang ke view index
-			return view('indexkeranjang',['keranjangs' => $keranjangs]);
+			return view('indexkeranjang',[' ' => $keranjangs]);
 		}
 	public function tambahkeranjang()
 		{
